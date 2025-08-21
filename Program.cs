@@ -1,79 +1,83 @@
-﻿/* //Exemplo 01 - Sub. 02 - Und. 01 a 04
-bool flag = true;
-int value = 0;
-if (flag)
+﻿/* //Exemplo 01 - Sub. 03 - Und. 01 a 04
+
+int employeeLevel = 400;
+string employeeName = "John Smith";
+
+string title = "";
+
+switch (employeeLevel)
 {
-    Console.WriteLine($"Inside the code block: {value}");
-}
-value = 10;
-Console.WriteLine($"Outside the code block: {value}"); */
-
-/* //exemplo 02 - Sub. 02 - Und. 01 a 04
-bool flag = true;
-int value;
-
-if (flag)
-{
-    value = 10;
-    Console.WriteLine($"Inside the code block: {value}");
-}
-
-Console.WriteLine($"Outside the code block: {value}");
-
- int value;
-
-if (true)
-{
-    value = 10;
-    Console.WriteLine($"Inside the code block: {value}");
+    case 100:
+        title = "Junior Associate";
+        break;
+    case 200:
+        title = "Senior Associate";
+        break;
+    case 300:
+        title = "Manager";
+        break;
+    case 400:
+        title = "Senior Manager";
+        break;
+    default:
+        title = "Associate";
+        break;
 }
 
-Console.WriteLine($"Outside the code block: {value}"); 
+Console.WriteLine($"{employeeName}, {title}"); */
 
-int value;
-value = 10;
-Console.WriteLine($"Inside the code block: {value}");
-Console.WriteLine($"Outside the code block: {value}"); 
+//Exemplo 02 - Sub. 03 - Und. 01 a 04
+string sku = "01-MN-L";
 
- int value;
-Console.WriteLine($"Outside the code block: {value}");
+string[] product = sku.Split('-');
 
-int value;
-value = 10;
-Console.WriteLine($"Inside the code block: {value}");
-Console.WriteLine($"Outside the code block: {value}"); */
+string type = "";
+string color = "";
+string size = "";
 
-/* //Exemplo 03 - Sub. 02 - Und. 01 a 04
-bool flag = true;
-if (flag) Console.WriteLine(flag); 
-
-string name = "steve";
-if (name == "bob")
-    Console.WriteLine("Found Bob");
-else if (name == "steve") 
-    Console.WriteLine("Found Steve");
-else
-    Console.WriteLine("Found Chuck");*/
-
-
-//Exemplo 04 - Sub. 02 - Und. 01 a 04
-int[] numbers = { 4, 8, 15, 16, 23, 42 };
-bool found = false;
-int total = 0;
-foreach (int number in numbers)
+switch (product[0])
 {
-    total += number;
-
-    if (number == 42)
-    {
-        found = true;
-    }
+    case "01":
+        type = "Sweat shirt";
+        break;
+    case "02":
+        type = "T-Shirt";
+        break;
+    case "03":
+        type = "Sweat pants";
+        break;
+    default:
+        type = "Other";
+        break;
 }
 
-if (found) 
+switch (product[1])
 {
-    Console.WriteLine("Set contains 42");
+    case "BL":
+        color = "Black";
+        break;
+    case "MN":
+        color = "Marron";
+        break;
+    default:
+        color = "White";
+        break;
 }
 
-Console.WriteLine($"Total: {total}");
+switch (product[2])
+{
+    case "S":
+        size = "Small";
+        break;
+    case "M":
+        size = "Medium";
+        break;
+    case "L":
+        size = "Large";
+        break;
+    default:
+        size = "One Size Fits All";
+        break;
+}
 
+Console.WriteLine($"Product: {size} {color} {type}");
